@@ -10,43 +10,68 @@ const server = app.listen(port, () => {
     console.log('Server is listening on port %s', port);
 });
 
-app.post('/yes', (req, res) => {
-    console.log('yes!!!');
+app.post('/banana', (req, res) => {
+    console.log('banana!!!');
     const O = [0, 0, 0];
-    const X = [0, 0, 255];
+    const X = [255, 255, 0];
+    const R = [255, 150, 0];
+    const Y = [150, 80, 50];
 
-    const circle = [
-        O, O, X, X, X, X, O, O,
-        O, X, O, O, O, O, X, O,
-        X, O, O, O, O, O, O, X,
-        X, O, O, O, O, O, O, X,
-        X, O, O, O, O, O, O, X,
-        X, O, O, O, O, O, O, X,
-        O, X, O, O, O, O, X, O,
-        O, O, X, X, X, X, O, O,
+    const bananaLED = [
+        O, O, O, O, O, Y, Y, O,
+        O, O, O, O, O, Y, Y, O,
+        O, O, O, O, O, R, X, O,
+        O, O, O, O, O, R, X, O,
+        O, O, O, O, R, X, X, O,
+        R, R, R, R, X, X, X, O,
+        O, X, X, X, X, X, O, O,
+        O, O, X, X, X, O, O, O,
     ];
 
-    matrix.setPixels(circle);
+    matrix.setPixels(bananaLED);
     res.send(200, "Yes!!", () => {});
 });
 
-app.post('/no', (req, res) => {
-    console.log('no!!!');
+app.post('/apple', (req, res) => {
+    console.log('apple!!!');
+    const O = [0, 0, 0];
+    const X = [255, 255, 0];
+    const R = [255, 150, 0];
+    const Y = [150, 80, 50];
+
+    const smile = [
+        O, O, X, X, X, X, O, O,
+        O, X, O, O, O, O, X, O,
+        X, O, O, O, O, O, O, X,
+        X, O, X, O, O, X, O, X,
+        X, O, O, O, O, O, O, X,
+        X, O, X, X, X, X, O, X,
+        O, X, O, O, O, O, X, O,
+        O, O, X, X, X, X, O, O,
+    ];
+    matrix.setPixels(smile);
+    res.send(200, "Yes!!", () => {});
+});
+
+app.post('/pineapple', (req, res) => {
+    console.log('pineapple!!!');
 
     const O = [0, 0, 0];
-    const X = [255, 0, 0];
+    const X = [255, 255, 0];
+    const Y = [255, 120, 10];
+    const G = [0, 255, 0];
 
     const cross = [
-        X, O, O, O, O, O, O, X,
-        O, X, O, O, O, O, X, O,
-        O, O, X, O, O, X, O, O,
-        O, O, O, X, X, O, O, O,
-        O, O, O, X, X, O, O, O,
-        O, O, X, O, O, X, O, O,
-        O, X, O, O, O, O, X, O,
-        X, O, O, O, O, O, O, X,
+        O, O, O, G, O, G, O, O,
+        O, O, G, G, G, G, G, O,
+        O, G, O, G, G, G, O, G,
+        O, O, O, X, X, X, O, O,
+        O, O, X, Y, X, Y, X, O,
+        O, O, Y, X, Y, X, Y, O,
+        O, O, X, Y, X, Y, X, O,
+        O, O, O, X, X, X, O, O,
     ];
 
     matrix.setPixels(cross);
-    res.send(200, "No!!", () => {});
+    res.send(200, "pineapple!!", () => {});
 });
