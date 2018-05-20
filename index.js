@@ -35,9 +35,7 @@ app.post('/banana', (req, res) => {
 app.post('/apple', (req, res) => {
     console.log('apple!!!');
     const O = [0, 0, 0];
-    const X = [255, 255, 0];
-    const R = [255, 150, 0];
-    const Y = [150, 80, 50];
+    const X = [255, 100, 100];
 
     const smile = [
         O, O, X, X, X, X, O, O,
