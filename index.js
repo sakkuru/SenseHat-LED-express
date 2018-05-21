@@ -18,14 +18,14 @@ app.post('/banana', (req, res) => {
     const Y = [150, 80, 50];
 
     const bananaLED = [
-        O, O, O, O, O, Y, Y, O,
-        O, O, O, O, O, Y, Y, O,
-        O, O, O, O, O, R, X, O,
-        O, O, O, O, O, R, X, O,
-        O, O, O, O, R, X, X, O,
-        R, R, R, R, X, X, X, O,
-        O, X, X, X, X, X, O, O,
-        O, O, X, X, X, O, O, O,
+        O, O, X, X, X, X, O, O,
+        O, X, O, O, O, O, X, O,
+        X, O, O, O, O, O, O, X,
+        X, O, X, O, O, X, O, X,
+        X, O, O, O, O, O, O, X,
+        X, O, X, X, X, X, O, X,
+        O, X, O, O, O, O, X, O,
+        O, O, X, X, X, X, O, O,
     ];
 
     matrix.setPixels(bananaLED);
